@@ -177,32 +177,32 @@ The following are **out of scope** unless explicitly added later:
 │  │ Sound / Vibration    │      │ Sound / Vibration    │        │
 │  │ Battery Voltage      │      │ Battery Voltage      │        │
 │  └──────────┬───────────┘      └──────────┬───────────┘        │
-│             │ Wi-Fi / MQTT                   │ Wi-Fi / MQTT     │
-└─────────────┼───────────────────────────────┼───────────────────┘
-              │                               │
-              ▼                               ▼
+│             │ Wi-Fi / MQTT                │ Wi-Fi / MQTT       │
+└─────────────┼─────────────────────────────┼────────────────────┘
+              │                             │
+              ▼                             ▼
 ┌────────────────────────────────────────────────────────────────┐
-│                    LOCAL NETWORK / IoT WLAN                     │
+│                    LOCAL NETWORK / IoT WLAN                    │
 │                                                                │
-│  Dedicated Wi-Fi AP / isolated LAN segment recommended          │
+│  Dedicated Wi-Fi AP / isolated LAN segment recommended         │
 └───────────────────────────────┬────────────────────────────────┘
                                 │
                                 ▼
 ┌────────────────────────────────────────────────────────────────┐
-│                      RASPBERRY PI GATEWAY                       │
+│                      RASPBERRY PI GATEWAY                      │
 │                                                                │
 │  ┌───────────────────────┐   ┌──────────────────────────────┐  │
-│  │ Mosquitto MQTT Broker │──▶│ Ingestion Service            │  │
+│  │ Mosquitto MQTT Broker │-->│ Ingestion Service            │  │
 │  │                       │   │ (Telegraf / Node-RED/Python) │  │
 │  └───────────────────────┘   └──────────────┬───────────────┘  │
 │                                             │                  │
 │                                             ▼                  │
 │                                  ┌──────────────────────────┐  │
-│                                  │ InfluxDB                │  │
-│                                  │ Time-series storage     │  │
-│                                  └──────────────┬──────────┘  │
-│                                                 │             │
-│                                                 ▼             │
+│                                  │ InfluxDB                 │  │
+│                                  │ Time-series storage      │  │
+│                                  └──────────────┬───────────┘  │
+│                                                 │              │
+│                                                 ▼              │
 │                                  ┌──────────────────────────┐  │
 │                                  │ Grafana (optional)       │  │
 │                                  │ Local dashboards         │  │
